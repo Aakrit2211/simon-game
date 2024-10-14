@@ -3,10 +3,9 @@ var nextPattern=[];
 var userChosenpattern=[];
 var level=0;
 var started=false;
-
 $(document).on("keypress touchstart", function(){
   if(!started){
-    setTimeout(randomSequence, 100);
+    randomSequence();
 }
 started=true;
 });
