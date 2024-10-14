@@ -3,13 +3,13 @@ var nextPattern=[];
 var userChosenpattern=[];
 var level=0;
 var started=false;
-$(document).ready(function () {
-  $(document).on("keypress touchstart", function () {
-    if (!started) {
-      started = true;
-      setTimeout(randomSequence, 100);
-    }
-  });
+
+$(document).on("keypress touchstart", function(){
+  if(!started){
+    setTimeout(randomSequence, 100);
+}
+started=true;
+});
 function randomSequence(){
     userChosenpattern=[];
     var randomNumber= Math.floor(Math.random()*4);
