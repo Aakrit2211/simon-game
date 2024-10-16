@@ -23,14 +23,12 @@ function randomSequence(){
 $(".btn").on("click", function(){
     var chosenColor= $(this).attr("id")
     userChosenpattern.push(chosenColor);
-    // console.log(userChosenpattern);
-    // console.log(nextPattern);
     playSound(chosenColor);
     animatePress(chosenColor);
     check(userChosenpattern.length-1);
 });
-function check(level){
 
+function check(level){
 if(userChosenpattern[level]===nextPattern[level]){
     console.log("success");
     if(userChosenpattern.length===nextPattern.length)
@@ -42,15 +40,11 @@ else {
     playSound("wrong");
     $("body").addClass("game-over");
     $("#level-title").text("Game Over, Press Any Key to Restart");
-
     setTimeout(function () {
       $("body").removeClass("game-over");
     }, 200);
-
     restart();
   }
-
-    // console.log("wrong")
 }
 function restart(){
     started=false;
